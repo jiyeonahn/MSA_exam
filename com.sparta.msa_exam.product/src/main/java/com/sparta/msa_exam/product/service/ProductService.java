@@ -30,7 +30,7 @@ public class ProductService {
 
     @Transactional(readOnly = true)
     public ProductResponseDto getProductById(Long productId) {
-        Product product = productRepository.findById(productId).orElseThrow(() -> new NullPointerException("해당 상품을 찾을 수 없습니다."));
+        Product product = productRepository.findById(productId).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "해당 상품을 찾을 수 없습니다."));
         return new ProductResponseDto(product);
     }
 

@@ -1,6 +1,7 @@
 package com.sparta.msa_exam.order.service;
 
 import com.sparta.msa_exam.order.client.ProductClient;
+import com.sparta.msa_exam.order.client.ProductRequestDto;
 import com.sparta.msa_exam.order.client.ProductResponseDto;
 import com.sparta.msa_exam.order.dto.OrderRequestDto;
 import com.sparta.msa_exam.order.dto.OrderResponseDto;
@@ -59,5 +60,26 @@ public class OrderService {
         return new OrderResponseDto(order);
     }
 
+    @Transactional
+    public void updateOrder(Long orderId, ProductRequestDto requestDto) {
+        try{
+            Long productId = requestDto.getProduct_id();
+            //상품목록조회
+            productClient.getProduct(productId);
 
+            Order order = orderRepository.findById(orderId)
+                    .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Order not found or has been deleted"));
+            List<OrderProduct> productList = order.getProduct_ids();
+
+            productList.add(OrderProduct.createOrderProduct(productId, order));
+
+            orderRepository.save(order);
+        } catch(ResponseStatusException e) {
+            if (e.getStatusCode() == HttpStatus.NOT_FOUND) {
+                throw new ResponseStatusException(HttpStatus.NOT_FOUND, "해당 상품을 찾을 수 없습니다.");
+            } else {
+                throw e;
+            }
+        }
+    }
 }
