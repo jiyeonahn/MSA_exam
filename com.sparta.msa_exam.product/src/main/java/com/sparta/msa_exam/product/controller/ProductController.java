@@ -1,18 +1,28 @@
 package com.sparta.msa_exam.product.controller;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import com.sparta.msa_exam.product.dto.ProductRequestDto;
+import com.sparta.msa_exam.product.dto.ProductResponseDto;
+import com.sparta.msa_exam.product.entity.Product;
+import com.sparta.msa_exam.product.service.ProductService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
+@RequiredArgsConstructor
+@RequestMapping("/products")
 public class ProductController {
 
-    @Value("${server.port}")
-    private String serverPort;
+    private final ProductService productService;
 
-    @GetMapping("/product/{id}")
-    public String getProduct(@PathVariable int id) {
-        return "Product " + id + " info!!!!! From port : " + serverPort ;
+    @PostMapping
+    public ProductResponseDto createProduct(@RequestBody ProductRequestDto requestDto) {
+        return productService.createProduct(requestDto);
+    }
+
+    @GetMapping
+    public List<Product> getProducts() {
+        return productService.getProducts();
     }
 }
