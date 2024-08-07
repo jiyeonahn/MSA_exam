@@ -1,15 +1,17 @@
-package com.sparta.msa_exam.product.dto;
+package com.sparta.msa_exam.order.client;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ProductRequestDto {
-    private Long product_id;
+public class ProductResponseDto {
+    private Long id;
     private String name;
-    private int supply_price;
+    private String description;
     private int quantity;
 }

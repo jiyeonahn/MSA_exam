@@ -1,19 +1,28 @@
 package com.sparta.msa_exam.order.controller;
 
+import com.sparta.msa_exam.order.dto.OrderRequestDto;
+import com.sparta.msa_exam.order.dto.OrderResponseDto;
 import com.sparta.msa_exam.order.service.OrderService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.data.domain.jaxb.SpringDataJaxb;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
+@RequestMapping("/order")
 public class OrderController {
 
     private final OrderService orderService;
 
-    @GetMapping("/order/{orderId}")
-    public String order(@PathVariable("orderId") String orderId) {
-        return orderService.getOrder(orderId);
+    @PostMapping
+    public OrderResponseDto createOrder(@RequestBody OrderRequestDto requestDto) {
+        return orderService.createOrder(requestDto);
+    }
+
+    @GetMapping("/{orderId}")
+    public OrderResponseDto getOrderById(@PathVariable("orderId") Long orderId) {
+        return orderService.getOrderById(orderId);
     }
 }

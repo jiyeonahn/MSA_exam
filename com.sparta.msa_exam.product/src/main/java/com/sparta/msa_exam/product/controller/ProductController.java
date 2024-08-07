@@ -25,4 +25,14 @@ public class ProductController {
     public List<Product> getProducts() {
         return productService.getProducts();
     }
+
+    @GetMapping("/{id}")
+    ProductResponseDto getProductById(@PathVariable("id") Long id){
+        return productService.getProductById(id);
+    }
+
+    @GetMapping("/{id}/reduceQuantity")
+    public void reduceProductQuantity(@PathVariable Long id, @RequestParam int quantity) {
+        productService.reduceProductQuantity(id, quantity);
+    }
 }
