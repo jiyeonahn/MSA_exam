@@ -5,6 +5,9 @@ import com.sparta.msa_exam.product.dto.ProductResponseDto;
 import com.sparta.msa_exam.product.entity.Product;
 import com.sparta.msa_exam.product.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,20 +21,26 @@ public class ProductService {
 
     private final ProductRepository productRepository;
 
+    @CachePut(cacheNames = "productCache", key = "#result.product_id")
+    @CacheEvict(cacheNames = "productAllCache", allEntries = true)
     public ProductResponseDto createProduct(ProductRequestDto requestDto) {
         Product product = Product.createProduct(requestDto);
         productRepository.save(product);
-        return new ProductResponseDto(product);
+        return ProductResponseDto.fromEntity(product);
     }
 
-    public List<Product> getProducts() {
-        return productRepository.findAll();
+    @Cacheable(cacheNames = "productAllCache", key = "methodName")
+    public List<ProductResponseDto> getProducts() {
+        return productRepository.findAll()
+                .stream()
+                .map(ProductResponseDto::fromEntity)
+                .toList();
     }
 
     @Transactional(readOnly = true)
     public ProductResponseDto getProductById(Long productId) {
         Product product = productRepository.findById(productId).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "해당 상품을 찾을 수 없습니다."));
-        return new ProductResponseDto(product);
+        return ProductResponseDto.fromEntity(product);
     }
 
     @Transactional
