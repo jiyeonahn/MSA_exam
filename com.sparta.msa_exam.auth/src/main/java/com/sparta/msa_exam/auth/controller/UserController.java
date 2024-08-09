@@ -2,6 +2,7 @@ package com.sparta.msa_exam.auth.controller;
 
 import com.sparta.msa_exam.auth.dto.SignInRequestDto;
 import com.sparta.msa_exam.auth.dto.SignUpRequestDto;
+import com.sparta.msa_exam.auth.dto.SignUpResponseDto;
 import com.sparta.msa_exam.auth.entity.User;
 import com.sparta.msa_exam.auth.service.UserService;
 import lombok.AllArgsConstructor;
@@ -19,9 +20,8 @@ public class UserController {
     private final UserService userService;
 
     @PostMapping("/signUp")
-    public ResponseEntity<?> signUp(@RequestBody SignUpRequestDto requestDto){
-        User createdUser = userService.signUp(requestDto);
-        return ResponseEntity.ok(createdUser);
+    public SignUpResponseDto signUp(@RequestBody SignUpRequestDto requestDto){
+        return userService.signUp(requestDto);
     }
 
     @PostMapping("/signIn")

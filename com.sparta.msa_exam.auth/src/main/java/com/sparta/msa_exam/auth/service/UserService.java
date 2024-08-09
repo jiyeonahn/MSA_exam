@@ -2,6 +2,7 @@ package com.sparta.msa_exam.auth.service;
 
 import com.sparta.msa_exam.auth.dto.SignInRequestDto;
 import com.sparta.msa_exam.auth.dto.SignUpRequestDto;
+import com.sparta.msa_exam.auth.dto.SignUpResponseDto;
 import com.sparta.msa_exam.auth.entity.User;
 import com.sparta.msa_exam.auth.repository.UserRepository;
 import io.jsonwebtoken.Jwts;
@@ -68,14 +69,14 @@ public class UserService {
                 .compact();
     }
 
-    public User signUp(SignUpRequestDto requestDto){
+    public SignUpResponseDto signUp(SignUpRequestDto requestDto){
         Optional<User> findUser = userRepository.findById(requestDto.getUserId());
         if(findUser.isPresent()){
             throw new ResponseStatusException(HttpStatus.FORBIDDEN,"중복된 사용자가 존재합니다.");
         }
         User user = SignUpRequestDto.toEntity(requestDto);
         user.setPassword(passwordEncoder.encode(requestDto.getPassword()));
-        return userRepository.save(user);
+        return SignUpResponseDto.fromEntity(userRepository.save(user));
     }
 
 
@@ -92,7 +93,7 @@ public class UserService {
 
     public boolean checkUser(String userId){
         userRepository.findById(userId)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.FORBIDDEN, "Invalid user ID"));
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.FORBIDDEN, "유효하지 않은 ID입니다."));
         return true;
     }
 }
