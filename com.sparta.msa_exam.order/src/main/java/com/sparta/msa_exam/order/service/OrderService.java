@@ -29,7 +29,14 @@ public class OrderService {
 
     @Transactional
     public OrderResponseDto createOrder(OrderRequestDto requestDto) {
-        Order order = Order.createOrder(requestDto.getName());
+
+        //해당 상품 조회
+        // 예외처리 -> FeignErrorDecoder
+        for(Long productId : requestDto.getOrderItemIds()){
+            productClient.getProductById(productId);
+        }
+
+        Order order = OrderRequestDto.toEntity(requestDto);
 
         for (Long productId : requestDto.getOrderItemIds()) {
             OrderProduct orderProduct = OrderProduct.createOrderProduct(productId, order);
@@ -44,30 +51,25 @@ public class OrderService {
     public OrderResponseDto getOrderById(Long orderId) {
         return orderRepository.findById(orderId)
                 .map(OrderResponseDto::fromEntity)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Order not found or has been deleted"));
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "해당 주문을 찾을 수 없습니다."));
     }
 
     @Transactional
     public OrderResponseDto updateOrder(Long orderId, ProductRequestDto requestDto) {
-        try{
-            Long productId = requestDto.getProduct_id();
-            //상품목록조회
-            productClient.getProduct(productId);
 
-            Order order = orderRepository.findById(orderId)
-                    .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Order not found or has been deleted"));
-            List<OrderProduct> productList = order.getProduct_ids();
+        Long productId = requestDto.getProduct_id();
+        // 해당 상품 조회
+        // 예외처리 -> FeignErrorDecoder
+        productClient.getProductById(productId);
 
-            productList.add(OrderProduct.createOrderProduct(productId, order));
+        Order order = orderRepository.findById(orderId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "해당 주문을 찾을 수 없습니다."));
+        List<OrderProduct> productList = order.getProduct_ids();
 
-            return OrderResponseDto.fromEntity(orderRepository.save(order));
-        } catch(ResponseStatusException e) {
-            if (e.getStatusCode() == HttpStatus.NOT_FOUND) {
-                throw new ResponseStatusException(HttpStatus.NOT_FOUND, "해당 상품을 찾을 수 없습니다.");
-            } else {
-                throw e;
-            }
-        }
+        productList.add(OrderProduct.createOrderProduct(productId, order));
+
+        return OrderResponseDto.fromEntity(orderRepository.save(order));
+
     }
 
 }

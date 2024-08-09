@@ -7,7 +7,7 @@ import lombok.*;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
-@Builder(access = AccessLevel.PRIVATE)
+@Builder
 @Entity
 @Table(name = "products")
 public class Product {
@@ -20,12 +20,5 @@ public class Product {
 
     @Column(nullable = false)
     private int supply_price;
-
-    public static Product createProduct(ProductRequestDto requestDto) {
-        return Product.builder()
-                .name(requestDto.getName())
-                .supply_price(requestDto.getSupply_price())
-                .build();
-    }
 
 }

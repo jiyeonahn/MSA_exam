@@ -24,7 +24,7 @@ public class ProductService {
     @CachePut(cacheNames = "productCache", key = "#result.product_id")
     @CacheEvict(cacheNames = "productAllCache", allEntries = true)
     public ProductResponseDto createProduct(ProductRequestDto requestDto) {
-        Product product = Product.createProduct(requestDto);
+        Product product = ProductRequestDto.toEntity(requestDto);
         return ProductResponseDto.fromEntity(productRepository.save(product));
     }
 
