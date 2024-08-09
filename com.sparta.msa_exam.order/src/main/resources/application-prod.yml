@@ -3,8 +3,8 @@ spring:
     activate:
       on-profile: prod
   datasource:
-    url: # RDS
-    username: # username
+    url: jdbc:mysql://{rds endpoint}:3306/msa_exam
+    username: admin
     password: # password
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
