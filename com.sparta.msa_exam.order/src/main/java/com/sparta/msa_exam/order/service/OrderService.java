@@ -36,21 +36,19 @@ public class OrderService {
             order.addProduct(orderProduct);
         }
 
-        orderRepository.save(order);
-        return new OrderResponseDto(order);
+        return OrderResponseDto.fromEntity(orderRepository.save(order));
     }
 
     @Cacheable(cacheNames = "orderCache", key = "args[0]")
     @Transactional(readOnly = true)
     public OrderResponseDto getOrderById(Long orderId) {
-        Order order = orderRepository.findById(orderId)
+        return orderRepository.findById(orderId)
+                .map(OrderResponseDto::fromEntity)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Order not found or has been deleted"));
-
-        return new OrderResponseDto(order);
     }
 
     @Transactional
-    public void updateOrder(Long orderId, ProductRequestDto requestDto) {
+    public OrderResponseDto updateOrder(Long orderId, ProductRequestDto requestDto) {
         try{
             Long productId = requestDto.getProduct_id();
             //상품목록조회
@@ -62,7 +60,7 @@ public class OrderService {
 
             productList.add(OrderProduct.createOrderProduct(productId, order));
 
-            orderRepository.save(order);
+            return OrderResponseDto.fromEntity(orderRepository.save(order));
         } catch(ResponseStatusException e) {
             if (e.getStatusCode() == HttpStatus.NOT_FOUND) {
                 throw new ResponseStatusException(HttpStatus.NOT_FOUND, "해당 상품을 찾을 수 없습니다.");
@@ -71,4 +69,5 @@ public class OrderService {
             }
         }
     }
+
 }
