@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7b740276-e160-4e46-97ff-87738e8ec130" name="Changes" comment="add WebClientConfig">
+      <change beforePath="$PROJECT_DIR$/com.sparta.msa_exam.gateway/src/main/java/com/sparta/msa_exam/gateway/filter/LocalJwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/com.sparta.msa_exam.gateway/src/main/java/com/sparta/msa_exam/gateway/filter/LocalJwtAuthenticationFilter.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/com.sparta.msa_exam">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/com.sparta.msa_exam.auth">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/com.sparta.msa_exam.gateway">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/com.sparta.msa_exam.order">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/com.sparta.msa_exam.product">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/com.sparta.msa_exam.auth">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="order" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;jiyeonahn&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/jiyeonahn/MSA_exam.git&quot;,
+    &quot;accountId&quot;: &quot;2516d754-e229-40d5-9135-bea24b9cf264&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/com.sparta.msa_exam.auth/src/main/java/com/sparta/msa_exam/auth/service/AuthService.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2kHfwTufGtghiVaXidpFsUtRQrG" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.Build com.sparta.msa_exam.auth.executor": "Run",
+    "Gradle.Build com.sparta.msa_exam.executor": "Run",
+    "Gradle.Build com.sparta.msa_exam.gateway.executor": "Run",
+    "Gradle.Build com.sparta.msa_exam.order.executor": "Run",
+    "Gradle.Build com.sparta.msa_exam.product.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.AuthApplication.executor": "Run",
+    "Spring Boot.GatewayApplication.executor": "Run",
+    "Spring Boot.OrderApplication.executor": "Debug",
+    "Spring Boot.ProductApplication.executor": "Run",
+    "Spring Boot.ProductApplication:19093.executor": "Run",
+    "Spring Boot.ProductApplication:19094.executor": "Run",
+    "Spring Boot.ServerApplication.executor": "Run",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/ajy74/IdeaProjects/MSA_exam/com.sparta.msa_exam.product",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "spring",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql_aurora_aws",
+      "mysql",
+      "redis"
+    ]
+  }
+}]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.sparta.msa_exam.product.dto" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ajy74\IdeaProjects\MSA_exam\com.sparta.msa_exam.product" />
+      <recent name="C:\Users\ajy74\IdeaProjects\MSA_exam\com.sparta.msa_exam.order" />
+      <recent name="C:\Users\ajy74\IdeaProjects\MSA_exam\com.sparta.msa_exam.gateway" />
+      <recent name="C:\Users\ajy74\IdeaProjects\MSA_exam\com.sparta.msa_exam.auth" />
+      <recent name="C:\Users\ajy74\IdeaProjects\MSA_exam\com.sparta.msa_exam.auth\src\main\java\com\sparta\msa_exam\auth" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.sparta.msa_exam.auth.dto" />
+      <recent name="com.sparta.msa_exam.auth" />
+      <recent name="com.sparta.msa_exam.auth.entity" />
+      <recent name="com.sparta.msa_exam.gateway" />
+      <recent name="com.sparta.msa_exam.product" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.ServerApplication">
+    <configuration name="AuthApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="ACTIVE_PROFILES" value="dev" />
+      <module name="com.sparta.msa_exam.auth.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.sparta.msa_exam.auth.AuthApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="com.sparta.msa_exam.gateway.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.sparta.msa_exam.gateway.GatewayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="ACTIVE_PROFILES" value="dev" />
+      <module name="com.sparta.msa_exam.order.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.sparta.msa_exam.order.OrderApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <option name="ACTIVE_PROFILES" value="dev" />
+      <module name="com.sparta.msa_exam.product.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.sparta.msa_exam.product.ProductApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductApplication:19094" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <option name="ACTIVE_PROFILES" value="dev" />
+      <module name="com.sparta.msa_exam.product.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.sparta.msa_exam.product.ProductApplication" />
+      <option name="VM_PARAMETERS" value="-Dserver.port=19094" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="server.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.sparta.msa_exam.ServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Spring Boot.AuthApplication" />
+      <item itemvalue="Spring Boot.ProductApplication" />
+      <item itemvalue="Spring Boot.GatewayApplication" />
+      <item itemvalue="Spring Boot.OrderApplication" />
+      <item itemvalue="Spring Boot.ProductApplication:19094" />
+      <item itemvalue="Spring Boot.ServerApplication" />
+    </list>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7b740276-e160-4e46-97ff-87738e8ec130" name="Changes" comment="" />
+      <created>1722945661214</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1722945661214</updated>
+      <workItem from="1722945662379" duration="13268000" />
+      <workItem from="1723004428363" duration="36397000" />
+      <workItem from="1723125269395" duration="7470000" />
+      <workItem from="1723167453726" duration="15164000" />
+      <workItem from="1723185402193" duration="1122000" />
+      <workItem from="1723186533270" duration="23428000" />
+      <workItem from="1723358483150" duration="2836000" />
+      <workItem from="1723377889028" duration="2737000" />
+      <workItem from="1723380644407" duration="1120000" />
+      <workItem from="1723381786961" duration="230000" />
+    </task>
+    <task id="LOCAL-00001" summary="server, product, order 초기 설정">
+      <option name="closed" value="true" />
+      <created>1722947834737</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1722947834737</updated>
+    </task>
+    <task id="LOCAL-00002" summary="라운드로빈 로드밸런싱 테스트">
+      <option name="closed" value="true" />
+      <created>1722947850699</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1722947850699</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Getway 설정파일 및 필터 추가">
+      <option name="closed" value="true" />
+      <created>1722948608621</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1722948608621</updated>
+    </task>
+    <task id="LOCAL-00004" summary="기본 API 구성하기 6.로그인 API">
+      <option name="closed" value="true" />
+      <created>1722956000127</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1722956000127</updated>
+    </task>
+    <task id="LOCAL-00005" summary="application name 변경">
+      <option name="closed" value="true" />
+      <created>1722957653854</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1722957653854</updated>
+    </task>
+    <task id="LOCAL-00006" summary="reponse header에 Server-Post 추가">
+      <option name="closed" value="true" />
+      <created>1723009038798</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1723009038798</updated>
+    </task>
+    <task id="LOCAL-00007" summary="상품추가, 상품 목록 조회 API 추가">
+      <option name="closed" value="true" />
+      <created>1723009101973</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1723009101973</updated>
+    </task>
+    <task id="LOCAL-00008" summary="주문 추가, 주문 단건 조회 API">
+      <option name="closed" value="true" />
+      <created>1723027803309</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1723027803309</updated>
+    </task>
+    <task id="LOCAL-00009" summary="주문에 상품 추가 API">
+      <option name="closed" value="true" />
+      <created>1723038754364</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1723038754364</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Zipkin 설정 추가">
+      <option name="closed" value="true" />
+      <created>1723039728761</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1723039728761</updated>
+    </task>
+    <task id="LOCAL-00011" summary="order, product 캐싱기능 구현">
+      <option name="closed" value="true" />
+      <created>1723131303924</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1723131303924</updated>
+    </task>
+    <task id="LOCAL-00012" summary="dev prod 환경 분리">
+      <option name="closed" value="true" />
+      <created>1723171323951</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1723171323951</updated>
+    </task>
+    <task id="LOCAL-00013" summary="rds endpoint 임시 설정">
+      <option name="closed" value="true" />
+      <created>1723172266454</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1723172266454</updated>
+    </task>
+    <task id="LOCAL-00014" summary="product-service, order-service 소스정리">
+      <option name="closed" value="true" />
+      <created>1723179571324</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1723179571324</updated>
+    </task>
+    <task id="LOCAL-00015" summary="FeignErrorDecoder 수정&#10;GlobalExceptionHandler 추가">
+      <option name="closed" value="true" />
+      <created>1723184049844</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1723184049844</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Gateway Filter 수정 - 토큰검증">
+      <option name="closed" value="true" />
+      <created>1723201185677</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1723201185677</updated>
+    </task>
+    <task id="LOCAL-00017" summary="SignUpResponseDto 추가">
+      <option name="closed" value="true" />
+      <created>1723202472016</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1723202472016</updated>
+    </task>
+    <task id="LOCAL-00018" summary="webclient delete">
+      <option name="closed" value="true" />
+      <created>1723358797051</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1723358797051</updated>
+    </task>
+    <task id="LOCAL-00019" summary="add WebClientConfig">
+      <option name="closed" value="true" />
+      <created>1723381536605</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1723381536605</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="server, product, order 초기 설정" />
+    <MESSAGE value="라운드로빈 로드밸런싱 테스트" />
+    <MESSAGE value="Getway 설정파일 및 필터 추가" />
+    <MESSAGE value="기본 API 구성하기 6.로그인 API" />
+    <MESSAGE value="application name 변경" />
+    <MESSAGE value="reponse header에 Server-Post 추가" />
+    <MESSAGE value="상품추가, 상품 목록 조회 API 추가" />
+    <MESSAGE value="주문 추가, 주문 단건 조회 API" />
+    <MESSAGE value="주문에 상품 추가 API" />
+    <MESSAGE value="Zipkin 설정 추가" />
+    <MESSAGE value="order, product 캐싱기능 구현" />
+    <MESSAGE value="dev prod 환경 분리" />
+    <MESSAGE value="rds endpoint 임시 설정" />
+    <MESSAGE value="product-service, order-service 소스정리" />
+    <MESSAGE value="FeignErrorDecoder 수정&#10;GlobalExceptionHandler 추가" />
+    <MESSAGE value="Gateway Filter 수정 - 토큰검증" />
+    <MESSAGE value="SignUpResponseDto 추가" />
+    <MESSAGE value="webclient delete" />
+    <MESSAGE value="Add .idea folder" />
+    <MESSAGE value="add WebClientConfig" />
+    <option name="LAST_COMMIT_MESSAGE" value="add WebClientConfig" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
