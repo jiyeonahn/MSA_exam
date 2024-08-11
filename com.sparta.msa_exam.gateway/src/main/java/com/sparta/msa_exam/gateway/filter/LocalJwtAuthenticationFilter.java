@@ -56,20 +56,12 @@ public class LocalJwtAuthenticationFilter implements GlobalFilter {
         try {
             SecretKey key = Keys.hmacShaKeyFor(Decoders.BASE64URL.decode(secretKey));
 
-            Claims info = Jwts.parser()
-                    .setSigningKey(key)
-                    .build()
-                    .parseClaimsJws(token)
-                    .getBody();
+            Jws<Claims> claimsJws = Jwts.parser()
+                    .verifyWith(key)
+                    .build().parseSignedClaims(token);
+            log.info("#####payload :: " + claimsJws.getPayload().toString());
 
-            //회원가입 유저 검증
-            Mono<Boolean> checkUser = webClient.get()
-                    .uri("/auth/" + info.getSubject())
-                    .retrieve()
-                    .bodyToMono(Boolean.class)
-                    .onErrorReturn(false);
-
-            return Boolean.TRUE.equals(checkUser.block());
+            return true;
         } catch (SecurityException | MalformedJwtException | SignatureException e) {
             log.error("Invalid JWT signature, 유효하지 않는 JWT 서명 입니다.");
         } catch (ExpiredJwtException e) {
