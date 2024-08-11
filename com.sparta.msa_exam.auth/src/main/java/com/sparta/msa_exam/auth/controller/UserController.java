@@ -48,7 +48,6 @@ public class UserController {
 
     @GetMapping("{userId}")
     public boolean checkUser(@PathVariable("userId") String userId){
-        System.out.println(userId);
         return userService.checkUser(userId);
     }
 }
