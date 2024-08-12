@@ -3,6 +3,7 @@ package com.sparta.msa_exam.order.service;
 import com.sparta.msa_exam.order.client.ProductClient;
 import com.sparta.msa_exam.order.client.ProductRequestDto;
 import com.sparta.msa_exam.order.client.ProductResponseDto;
+import com.sparta.msa_exam.order.client.ProductService;
 import com.sparta.msa_exam.order.dto.OrderRequestDto;
 import com.sparta.msa_exam.order.dto.OrderResponseDto;
 import com.sparta.msa_exam.order.entity.Order;
@@ -24,8 +25,8 @@ import java.util.List;
 @Slf4j
 public class OrderService {
 
-    private final ProductClient productClient;
     private final OrderRepository orderRepository;
+    private final ProductService productService;
 
     @Transactional
     public OrderResponseDto createOrder(OrderRequestDto requestDto) {
@@ -33,7 +34,7 @@ public class OrderService {
         //해당 상품 조회
         // 예외처리 -> FeignErrorDecoder
         for(Long productId : requestDto.getOrderItemIds()){
-            productClient.getProductById(productId);
+            productService.getProductById(productId);
         }
 
         Order order = OrderRequestDto.toEntity(requestDto);
@@ -60,7 +61,7 @@ public class OrderService {
         Long productId = requestDto.getProduct_id();
         // 해당 상품 조회
         // 예외처리 -> FeignErrorDecoder
-        productClient.getProductById(productId);
+        productService.getProductById(productId);
 
         Order order = orderRepository.findById(orderId)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "해당 주문을 찾을 수 없습니다."));
