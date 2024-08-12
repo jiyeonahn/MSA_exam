@@ -1,14 +1,11 @@
 package com.sparta.msa_exam.order.controller;
 
-import com.sparta.msa_exam.order.client.ProductRequestDto;
-import com.sparta.msa_exam.order.dto.OrderRequestDto;
-import com.sparta.msa_exam.order.dto.OrderResponseDto;
-import com.sparta.msa_exam.order.service.OrderService;
+import com.sparta.msa_exam.order.infrastructure.ProductRequestDto;
+import com.sparta.msa_exam.order.application.dto.OrderRequestDto;
+import com.sparta.msa_exam.order.application.dto.OrderResponseDto;
+import com.sparta.msa_exam.order.application.OrderService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.jaxb.SpringDataJaxb;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
