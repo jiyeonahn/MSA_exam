@@ -55,8 +55,7 @@ public class UserService {
     public String createAccessToken(String user_id, String role) {
         return Jwts.builder()
                 // 사용자 ID를 클레임으로 설정
-                .setSubject(user_id)
-                .claim("role", role)
+                .claim("user_id",user_id)
                 // JWT 발행자를 설정
                 .issuer(issuer)
                 // JWT 발행 시간을 현재 시간으로 설정
