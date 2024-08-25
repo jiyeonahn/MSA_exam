@@ -15,6 +15,11 @@ public class ProductController {
 
     private final ProductService productService;
 
+    @GetMapping("/{id}")
+    ProductResponseDto getProductById(@PathVariable("id") Long id){
+        return productService.getProductById(id);
+    }
+
     @PostMapping
     public ProductResponseDto createProduct(@RequestBody ProductRequestDto requestDto) {
         return productService.createProduct(requestDto);
@@ -25,9 +30,5 @@ public class ProductController {
         return productService.getProducts();
     }
 
-    @GetMapping("/{id}")
-    ProductResponseDto getProductById(@PathVariable("id") Long id){
-        return productService.getProductById(id);
-    }
 
 }
