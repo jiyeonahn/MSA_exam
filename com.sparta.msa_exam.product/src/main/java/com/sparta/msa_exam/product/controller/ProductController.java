@@ -1,9 +1,8 @@
 package com.sparta.msa_exam.product.controller;
 
-import com.sparta.msa_exam.product.dto.ProductRequestDto;
-import com.sparta.msa_exam.product.dto.ProductResponseDto;
-import com.sparta.msa_exam.product.entity.Product;
-import com.sparta.msa_exam.product.service.ProductService;
+import com.sparta.msa_exam.product.application.dto.ProductRequestDto;
+import com.sparta.msa_exam.product.application.dto.ProductResponseDto;
+import com.sparta.msa_exam.product.application.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

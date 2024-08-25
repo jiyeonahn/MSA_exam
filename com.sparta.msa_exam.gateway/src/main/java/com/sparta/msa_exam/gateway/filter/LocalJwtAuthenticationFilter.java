@@ -1,12 +1,17 @@
 package com.sparta.msa_exam.gateway.filter;
 
+import com.sparta.msa_exam.gateway.AuthClient;
+import com.sparta.msa_exam.gateway.AuthService;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
+import jakarta.ws.rs.ext.ParamConverter;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -18,13 +23,14 @@ import javax.crypto.SecretKey;
 @Component
 public class LocalJwtAuthenticationFilter implements GlobalFilter {
 
-    @Value("${service.jwt.secret-key}")
-    private String secretKey;
+    private final String secretKey;
 
-    private final WebClient webClient;
+    private final AuthService authService;
 
-    public LocalJwtAuthenticationFilter(WebClient.Builder webClientBuilder) {
-        this.webClient = webClientBuilder.baseUrl("http://localhost:19091").build();
+    // FeignClient 와 Global Filter 의 순환참조 문제가 발생하여 Bean 초기 로딩 시 순환을 막기 위해 @Lazy 어노테이션을 추가함.
+    public LocalJwtAuthenticationFilter(@Value("${service.jwt.secret-key}") String secretKey, @Lazy AuthService authService) {
+        this.secretKey = secretKey;
+        this.authService = authService;
     }
 
     @Override
@@ -56,18 +62,11 @@ public class LocalJwtAuthenticationFilter implements GlobalFilter {
         try {
             SecretKey key = Keys.hmacShaKeyFor(Decoders.BASE64URL.decode(secretKey));
 
-            Claims info = Jwts.parser()
-                    .setSigningKey(key)
-                    .build()
-                    .parseClaimsJws(token)
-                    .getBody();
+            Jws<Claims> claimsJws = Jwts.parser()
+                    .verifyWith(key)
+                    .build().parseSignedClaims(token);
 
-            Boolean checkUser = webClient.get()
-                    .uri("/auth/" + info.getSubject())
-                    .retrieve()
-                    .bodyToMono(Boolean.class)
-                    .block();
-            log.info("#####payload :: " + info.toString());
+            boolean checkUser = authService.checkUser(claimsJws.getPayload().get("user_id").toString());
 
             return checkUser;
         } catch (SecurityException | MalformedJwtException | SignatureException e) {

@@ -1,10 +1,9 @@
 package com.sparta.msa_exam.auth.controller;
 
-import com.sparta.msa_exam.auth.dto.SignInRequestDto;
-import com.sparta.msa_exam.auth.dto.SignUpRequestDto;
-import com.sparta.msa_exam.auth.dto.SignUpResponseDto;
-import com.sparta.msa_exam.auth.entity.User;
-import com.sparta.msa_exam.auth.service.UserService;
+import com.sparta.msa_exam.auth.application.dto.SignInRequestDto;
+import com.sparta.msa_exam.auth.application.dto.SignUpRequestDto;
+import com.sparta.msa_exam.auth.application.dto.SignUpResponseDto;
+import com.sparta.msa_exam.auth.application.UserService;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
